@@ -82,7 +82,7 @@ Our fine-grained correspondence network and other baseline models can be downloa
 
 After downloading a pre-trained model, place it  under `SFC/checkpoints/` folder. Please don't modify the file names of these checkpoints.
 ### Inference and Evaluation
-To evaluate our SFC, run:
+To evaluate SFC, run:
 
 **Step 1:Video object segmentation**
 ```
@@ -92,7 +92,7 @@ python test_vos.py --filelist ./eval/davis_vallist.txt \
 --save-path /save/path
 ```
 
-**Step 2:Post-Process**
+**Step 2:Post-process**
 ```
 python eval/convert_davis.py --in_folder /save/path/ --out_folder /converted/path --dataset /path/to/davis/
 ```
@@ -106,19 +106,144 @@ python $HOME/davis2017-evaluation/evaluation_method.py \
 ```
 
 This should give:
+```
+a
+```
+The reproduced performance in this repo is slightly higher than reported in the paper.
 
+
+---
 Here you'll find the command-lines to evaluate some baseline models.
 
 <details>
 <summary>
-MoCo
+Fine-grained Correspondence Network (FC)
 </summary>
 
+For step 1, run:
 ```
-python main.py --eval --model deit_base_distilled_patch16_224 --resume https://dl.fbaipublicfiles.com/deit/deit_base_distilled_patch16_224-df68dfff.pth
+python test_vos.py --filelist ./eval/davis_vallist.txt \
+--fc-model fine-grained \
+--topk 10 --videoLen 20 --radius 12 --temperature 0.05 --cropSize -1 \
+--save-path /save/path
 ```
 
-giving
+Run step 2 and step 3, this should give:
+```
+* Acc@1 83.372 Acc@5 96.482 loss 0.685
+```
+</details>
+
+<details>
+<summary>
+Contrastive Random Walk (CRW)
+</summary>
+
+For step 1, run:
+```
+python test_vos.py --filelist ./eval/davis_vallist.txt \
+--fc-model crw \
+--topk 10 --videoLen 20 --radius 12 --temperature 0.05 --cropSize -1 \
+--save-path /save/path
+```
+
+Run step 2 and step 3, this should give:
+```
+* Acc@1 83.372 Acc@5 96.482 loss 0.685
+```
+</details>
+
+<details>
+<summary>
+ImageNet Classification
+</summary>
+
+For step 1, run:
+```
+python test_vos.py --filelist ./eval/davis_vallist.txt \
+--semantic-model imagenet50 \
+--topk 10 --videoLen 20 --radius 12 --temperature 0.05 --cropSize -1 \
+--save-path /save/path
+```
+
+Run step 2 and step 3, this should give:
+```
+* Acc@1 83.372 Acc@5 96.482 loss 0.685
+```
+</details>
+
+<details>
+<summary>
+MoCo-V1
+</summary>
+
+For step 1, run:
+```
+python test_vos.py --filelist ./eval/davis_vallist.txt \
+--semantic-model mocov1 \
+--topk 10 --videoLen 20 --radius 12 --temperature 0.05 --cropSize -1 \
+--save-path /save/path
+```
+
+Run step 2 and step 3, this should give:
+```
+* Acc@1 83.372 Acc@5 96.482 loss 0.685
+```
+</details>
+
+<details>
+<summary>
+SimSiam
+</summary>
+
+For step 1, run:
+```
+python test_vos.py --filelist ./eval/davis_vallist.txt \
+--semantic-model simsiam \
+--topk 10 --videoLen 20 --radius 12 --temperature 0.05 --cropSize -1 \
+--save-path /save/path
+```
+
+Run step 2 and step 3, this should give:
+```
+* Acc@1 83.372 Acc@5 96.482 loss 0.685
+```
+</details>
+
+<details>
+<summary>
+VFS
+</summary>
+
+For step 1, run:
+```
+python test_vos.py --filelist ./eval/davis_vallist.txt \
+--semantic-model vfs \
+--topk 10 --videoLen 20 --radius 12 --temperature 0.05 --cropSize -1 \
+--save-path /save/path
+```
+
+Run step 2 and step 3, this should give:
+```
+* Acc@1 83.372 Acc@5 96.482 loss 0.685
+```
+</details>
+
+
+<details>
+<summary>
+PixPro
+</summary>
+
+For step 1, run:
+```
+python test_vos.py --filelist ./eval/davis_vallist.txt \
+--semantic-model pixpro \
+--topk 10 --videoLen 20 --radius 12 --temperature 0.05 --cropSize -1 \
+--save-path /save/path
+```
+
+Run step 2 and step 3, this should give:
 ```
 * Acc@1 83.372 Acc@5 96.482 loss 0.685
 ```
