@@ -81,11 +81,11 @@ Our fine-grained correspondence network and other baseline models can be downloa
 | Pre-training Method | Architecture |Link | 
 | :---: | :---: | :---: |
 | Fine-grained Correspondence | ResNet-18 |  [download](https://github.com/Alxead/SFC/releases/download/v0.1/pretrained_fc.pth)   |
-| CRW | ResNet-18 |[download](https://github.com/ajabri/videowalk/raw/master/pretrained.pth)    |
-| MoCo-V1| ResNet-50 |[download](https://dl.fbaipublicfiles.com/moco/moco_checkpoints/moco_v1_200ep/moco_v1_200ep_pretrain.pth.tar)|
-| SimSiam | ResNet-50 |[download](https://dl.fbaipublicfiles.com/simsiam/models/100ep-256bs/pretrain/checkpoint_0099.pth.tar)|
-| VFS | ResNet-50 | [download](https://github.com/xvjiarui/VFS/releases/download/v0.1-rc1/r50_nc_sgd_cos_100e_r5_1xNx2_k400-d7ce3ad0.pth)    |
-| PixPro | ResNet-50 |[download](https://drive.google.com/file/d/1Ox2RoFbTrrllbwvITdZvwkNnKUQSUPmV/view?usp=sharing)|
+| [CRW](https://arxiv.org/abs/2006.14613) | ResNet-18 |[download](https://github.com/ajabri/videowalk/raw/master/pretrained.pth)    |
+| [MoCo-V1](https://arxiv.org/abs/1911.05722)| ResNet-50 |[download](https://dl.fbaipublicfiles.com/moco/moco_checkpoints/moco_v1_200ep/moco_v1_200ep_pretrain.pth.tar)|
+| [SimSiam](https://arxiv.org/abs/2011.10566) | ResNet-50 |[download](https://dl.fbaipublicfiles.com/simsiam/models/100ep-256bs/pretrain/checkpoint_0099.pth.tar)|
+| [VFS](https://arxiv.org/abs/2103.17263) | ResNet-50 | [download](https://github.com/xvjiarui/VFS/releases/download/v0.1-rc1/r50_nc_sgd_cos_100e_r5_1xNx2_k400-d7ce3ad0.pth)    |
+| [PixPro](https://arxiv.org/abs/2011.10043) | ResNet-50 |[download](https://drive.google.com/file/d/1Ox2RoFbTrrllbwvITdZvwkNnKUQSUPmV/view?usp=sharing)|
 | ImageNet classification | ResNet-50 | torchvision |
 
 
