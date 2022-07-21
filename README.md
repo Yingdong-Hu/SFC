@@ -64,16 +64,25 @@ To evaluate a model on the DAVIS task, clone [davis2017-evaluation](https://gith
 ```
 git clone https://github.com/davisvideochallenge/davis2017-evaluation $HOME/davis2017-evaluation
 ```
-Download [DAVIS2017]() from the official website. Modify the paths provided in `code/eval/davis_vallist.txt`
+Download [DAVIS2017](https://davischallenge.org/davis2017/code.html) dataset from the official website. Modify the paths provided in `code/eval/davis_vallist.txt`
 
 ### Pre-trained Model
 Our fine-grained correspondence network and other baseline models can be downloaded as following:
 
-After downloading an pre-trained model, please place it  under `checkpoints/` folder. 
+After downloading an pre-trained model, place it  under `checkpoints/` folder. Please don't modify the file names of these checkpoints.
 ### Inference and Evaluation
+To evaluate our SFC, run:
+
 **Step 1:Video object segmentation**
+```
+python test.py --filelist /path/to/davis/vallist.txt \
+--model-type scratch --resume ../pretrained.pth --save-path /save/path \
+--topk 10 --videoLen 20 --radius 12  --temperature 0.05  --cropSize -1
+```
+
 **Step 2:Post-Process**
-**Step 3:Video object segmentation**
+
+**Step 3:Compute metrics**
 
 
 This should give:
