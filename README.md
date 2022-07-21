@@ -16,7 +16,7 @@ Yingdong Hu, Renhao Wang, Kaifeng Zhang, and Yang Gao
 * PyTorch 1.8.0
 * Other dependencies
 
-Create an new conda environment
+Create an new conda environment.
 ```
 conda create -n sfc python=3.8 -y
 conda activate sfc
@@ -75,12 +75,12 @@ Our fine-grained correspondence network and other baseline models can be downloa
 | CRW | ResNet-18 |    ?    |
 | MoCo-V1| ResNet-50 |[Google Drive](https://dl.fbaipublicfiles.com/moco/moco_checkpoints/moco_v1_200ep/moco_v1_200ep_pretrain.pth.tar)|
 | SimSiam | ResNet-50 |    ?    |
-| SimSiam | ResNet-50 |    ?    |
+| VFS | ResNet-50 |    ?    |
 | PixPro | ResNet-50 |    ?    |
 | ImageNet classification | ResNet-50 | torchvision |
 
 
-After downloading an pre-trained model, place it  under `checkpoints/` folder. Please don't modify the file names of these checkpoints.
+After downloading a pre-trained model, place it  under `checkpoints/` folder. Please don't modify the file names of these checkpoints.
 ### Inference and Evaluation
 To evaluate our SFC, run:
 
