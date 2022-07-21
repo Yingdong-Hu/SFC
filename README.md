@@ -57,7 +57,7 @@ Training time is about 25 hours.
 
 
 ## Evaluation: Label Propagation
-The label propagation algorithm is based on the implementation of [Contrastive Random Walk (CRW)](https://github.com/ajabri/videowalk).
+The label propagation algorithm is based on the implementation of [Contrastive Random Walk (CRW)](https://github.com/ajabri/videowalk). The output of `test_vos.py` (predicted label maps) must be post-pocessed for evaluation.
 
 ### DAVIS
 To evaluate a model on the DAVIS task, clone [davis2017-evaluation](https://github.com/davisvideochallenge/davis2017-evaluation) repository.
@@ -80,21 +80,30 @@ Our fine-grained correspondence network and other baseline models can be downloa
 | ImageNet classification | ResNet-50 | torchvision |
 
 
-After downloading a pre-trained model, place it  under `checkpoints/` folder. Please don't modify the file names of these checkpoints.
+After downloading a pre-trained model, place it  under `SFC/checkpoints/` folder. Please don't modify the file names of these checkpoints.
 ### Inference and Evaluation
 To evaluate our SFC, run:
 
 **Step 1:Video object segmentation**
 ```
-python test.py --filelist /path/to/davis/vallist.txt \
---model-type scratch --resume ../pretrained.pth --save-path /save/path \
---topk 10 --videoLen 20 --radius 12  --temperature 0.05  --cropSize -1
+python test_vos.py --filelist ./eval/davis_vallist.txt \
+--fc-model fine-grained --semantic-model mocov1 \
+--topk 15 --videoLen 20 --radius 15 --temperature 0.1  --cropSize -1 --lambd 1.75 \
+--save-path /save/path
 ```
 
 **Step 2:Post-Process**
+```
+python eval/convert_davis.py --in_folder /save/path/ --out_folder /converted/path --dataset /path/to/davis/
+```
 
 **Step 3:Compute metrics**
-
+```
+python $HOME/davis2017-evaluation/evaluation_method.py \
+--task semi-supervised --set val \
+--davis_path /path/to/davis/ \
+--results_path /converted/path
+```
 
 This should give:
 
