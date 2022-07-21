@@ -71,7 +71,7 @@ Our fine-grained correspondence network and other baseline models can be downloa
 
 | Pre-training Method | Architecture |Link | 
 | :---: | :---: | :---: |
-| Fine-grained Correspondence | ResNet-18 |    ?    |
+| Fine-grained Correspondence | ResNet-18 |  [download](https://github.com/Alxead/SFC/releases/download/v0.1/pretrained_fc.pth)   |
 | CRW | ResNet-18 |[download](https://github.com/ajabri/videowalk/raw/master/pretrained.pth)    |
 | MoCo-V1| ResNet-50 |[download](https://dl.fbaipublicfiles.com/moco/moco_checkpoints/moco_v1_200ep/moco_v1_200ep_pretrain.pth.tar)|
 | SimSiam | ResNet-50 |[download](https://dl.fbaipublicfiles.com/simsiam/models/100ep-256bs/pretrain/checkpoint_0099.pth.tar)|
@@ -84,7 +84,7 @@ After downloading a pre-trained model, place it  under `SFC/checkpoints/` folder
 ### Inference and Evaluation
 To evaluate SFC, run:
 
-**Step 1:Video object segmentation**
+**Step 1: Video object segmentation**
 ```
 python test_vos.py --filelist ./eval/davis_vallist.txt \
 --fc-model fine-grained --semantic-model mocov1 \
@@ -92,17 +92,16 @@ python test_vos.py --filelist ./eval/davis_vallist.txt \
 --save-path /save/path
 ```
 
-**Step 2:Post-process**
+**Step 2: Post-process**
 ```
 python eval/convert_davis.py --in_folder /save/path/ --out_folder /converted/path --dataset /path/to/davis/
 ```
 
-**Step 3:Compute metrics**
+**Step 3: Compute metrics**
 ```
 python $HOME/davis2017-evaluation/evaluation_method.py \
 --task semi-supervised --set val \
---davis_path /path/to/davis/ \
---results_path /converted/path
+--davis_path /path/to/davis/ --results_path /converted/path 
 ```
 
 This should give:
