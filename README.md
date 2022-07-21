@@ -7,6 +7,9 @@ Semantic-Aware Fine-Grained Correspondence. ECCV 2022 (**Oral**)
 Yingdong Hu, Renhao Wang, Kaifeng Zhang, and Yang Gao
 <br>
 
+<div align="center">
+<img src="figs/overview.jpg" width="99%">
+</div>
 
 
 ## Installation
@@ -57,6 +60,12 @@ Training time is about 25 hours.
 
 
 ## Evaluation: Label Propagation
+
+<p float="left">
+<img src="figs/video1.gif" width="49%">
+<img src="figs/video15.gif" width="49%">
+</p>
+
 The label propagation algorithm is based on the implementation of [Contrastive Random Walk (CRW)](https://github.com/ajabri/videowalk). The output of `test_vos.py` (predicted label maps) must be post-pocessed for evaluation.
 
 ### DAVIS
