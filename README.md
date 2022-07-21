@@ -72,11 +72,11 @@ Our fine-grained correspondence network and other baseline models can be downloa
 | Pre-training Method | Architecture |Link | 
 | :---: | :---: | :---: |
 | Fine-grained Correspondence | ResNet-18 |    ?    |
-| CRW | ResNet-18 |    ?    |
-| MoCo-V1| ResNet-50 |[Google Drive](https://dl.fbaipublicfiles.com/moco/moco_checkpoints/moco_v1_200ep/moco_v1_200ep_pretrain.pth.tar)|
-| SimSiam | ResNet-50 |    ?    |
-| VFS | ResNet-50 |    ?    |
-| PixPro | ResNet-50 |    ?    |
+| CRW | ResNet-18 |[download](https://github.com/ajabri/videowalk/raw/master/pretrained.pth)    |
+| MoCo-V1| ResNet-50 |[download](https://dl.fbaipublicfiles.com/moco/moco_checkpoints/moco_v1_200ep/moco_v1_200ep_pretrain.pth.tar)|
+| SimSiam | ResNet-50 |[download](https://dl.fbaipublicfiles.com/simsiam/models/100ep-256bs/pretrain/checkpoint_0099.pth.tar)|
+| VFS | ResNet-50 | [download](https://github.com/xvjiarui/VFS/releases/download/v0.1-rc1/r50_nc_sgd_cos_100e_r5_1xNx2_k400-d7ce3ad0.pth)    |
+| PixPro | ResNet-50 |[download](https://drive.google.com/file/d/1Ox2RoFbTrrllbwvITdZvwkNnKUQSUPmV/view?usp=sharing)|
 | ImageNet classification | ResNet-50 | torchvision |
 
 
