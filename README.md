@@ -64,7 +64,7 @@ To evaluate a model on the DAVIS task, clone [davis2017-evaluation](https://gith
 ```
 git clone https://github.com/davisvideochallenge/davis2017-evaluation $HOME/davis2017-evaluation
 ```
-Download [DAVIS2017](https://davischallenge.org/davis2017/code.html) dataset from the official website. Modify the paths provided in `code/eval/davis_vallist.txt`
+Download [DAVIS2017](https://davischallenge.org/davis2017/code.html) dataset from the official website. Modify the paths provided in `code/eval/davis_vallist.txt`.
 
 ### Pre-trained Model
 Our fine-grained correspondence network and other baseline models can be downloaded as following:
