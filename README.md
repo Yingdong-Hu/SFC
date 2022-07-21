@@ -28,7 +28,7 @@ conda install pytorch==1.8.0 torchvision==0.9.0 cudatoolkit=11.1 -c pytorch -c c
 Clone this repo and install required packages:
 ```
 git clone https://github.com/Alxead/SFC.git
-pip install opencv-python scikit-image matplotlib wandb
+pip install opencv-python matplotlib scikit-image imageio wandb
 ```
 
 ### Dataset Preparation 
@@ -57,7 +57,7 @@ Training time is about 25 hours.
 
 
 ## Evaluation: Label Propagation
-The label propagation algorithm is based on the implementation of [Contrastive Random Walk](https://github.com/ajabri/videowalk).
+The label propagation algorithm is based on the implementation of [Contrastive Random Walk (CRW)](https://github.com/ajabri/videowalk).
 
 ### DAVIS
 To evaluate a model on the DAVIS task, clone [davis2017-evaluation](https://github.com/davisvideochallenge/davis2017-evaluation) repository.
@@ -68,6 +68,17 @@ Download [DAVIS2017](https://davischallenge.org/davis2017/code.html) dataset fro
 
 ### Pre-trained Model
 Our fine-grained correspondence network and other baseline models can be downloaded as following:
+
+| Pre-training Method | Architecture |Link | 
+| :---: | :---: | :---: |
+| Fine-grained Correspondence | ResNet-18 |    ?    |
+| CRW | ResNet-18 |    ?    |
+| MoCo-V1| ResNet-50 |[Google Drive](https://dl.fbaipublicfiles.com/moco/moco_checkpoints/moco_v1_200ep/moco_v1_200ep_pretrain.pth.tar)|
+| SimSiam | ResNet-50 |    ?    |
+| SimSiam | ResNet-50 |    ?    |
+| PixPro | ResNet-50 |    ?    |
+| ImageNet classification | ResNet-50 | torchvision |
+
 
 After downloading an pre-trained model, place it  under `checkpoints/` folder. Please don't modify the file names of these checkpoints.
 ### Inference and Evaluation
