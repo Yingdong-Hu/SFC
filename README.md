@@ -90,7 +90,7 @@ git clone https://github.com/davisvideochallenge/davis2017-evaluation $HOME/davi
 Download [DAVIS2017](https://davischallenge.org/davis2017/code.html) dataset from the official website. Modify the paths provided in `code/eval/davis_vallist.txt`.
 
 ### Inference and Evaluation
-To evaluate SFC, run:
+To evaluate SFC (after downloading pre-trained model and place it under `SFC/checkpoints`), run:
 
 **Step 1: Video object segmentation**
 ```
