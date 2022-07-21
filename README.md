@@ -31,7 +31,7 @@ conda install pytorch==1.8.0 torchvision==0.9.0 cudatoolkit=11.1 -c pytorch -c c
 Clone this repo and install required packages:
 ```
 git clone https://github.com/Alxead/SFC.git
-pip install opencv-python matplotlib scikit-image imageio wandb
+pip install opencv-python matplotlib scikit-image imageio pandas tqdm wandb
 ```
 
 ### Dataset Preparation 
@@ -115,7 +115,8 @@ python $HOME/davis2017-evaluation/evaluation_method.py \
 
 This should give:
 ```
-a
+ J&F-Mean   J-Mean  J-Recall  J-Decay   F-Mean  F-Recall  F-Decay
+ 0.713385 0.684833  0.812559 0.171174 0.741938  0.851699 0.234408
 ```
 The reproduced performance in this repo is slightly higher than reported in the paper.
 
@@ -138,7 +139,8 @@ python test_vos.py --filelist ./eval/davis_vallist.txt \
 
 Run step 2 and step 3, this should give:
 ```
-* Acc@1 83.372 Acc@5 96.482 loss 0.685
+ J&F-Mean   J-Mean  J-Recall  J-Decay   F-Mean  F-Recall  F-Decay
+ 0.679754 0.650271  0.767701 0.204178 0.709238  0.825091 0.267192
 ```
 </details>
 
