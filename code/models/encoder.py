@@ -70,14 +70,6 @@ def make_encoder(model_type, remove_layers=['layer4']):
         del net_state['fc.bias']
         partial_load(net_state, net)
 
-    # elif model_type == 'mocov2':
-    #     net = resnet.resnet50(pretrained=False)
-    #     pretrained_path = osp.join('../checkpoints', 'moco_v2_800ep_pretrain.pth.tar')
-    #     net_ckpt = torch.load(pretrained_path)
-    #     net_state = {k.replace('module.encoder_q.', ''): v for k, v in net_ckpt['state_dict'].items() if
-    #                  'module.encoder_q' in k}
-    #     partial_load(net_state, net)
-
     elif model_type == 'simsiam':
         net = resnet.resnet50(pretrained=False)
         pretrained_path = osp.join('../checkpoints', 'checkpoint_0099.pth.tar')
@@ -86,11 +78,26 @@ def make_encoder(model_type, remove_layers=['layer4']):
                      'module.encoder' in k}
         partial_load(net_state, net)
 
+    elif model_type == 'vfs':
+        net = resnet.resnet50(pretrained=False)
+        pretrained_path = osp.join('../checkpoints', 'r50_nc_sgd_cos_100e_r5_1xNx2_k400-d7ce3ad0.pth')
+        net_ckpt = torch.load(pretrained_path)
+        net_state = net_ckpt['state_dict']
+        partial_load(net_state, net)
+
+    elif model_type == 'pixpro':
+        net = resnet.resnet50(pretrained=False)
+        pretrained_path = osp.join('../checkpoints', 'pixpro_base_r50_400ep_md5_919c6612.pth')
+        net_ckpt = torch.load(pretrained_path)
+        net_state = {k.replace('module.encoder.', ''): v for k, v in net_ckpt['model'].items() if
+                     'module.encoder.' in k}
+        partial_load(net_state, net)
+
     elif model_type == 'fine-grained':
         net = resnet.resnet18(pretrained=False)
         pretrained_path = osp.join('../checkpoints', 'pretrained_fc.pth')
         net_ckpt = torch.load(pretrained_path)
-        net_state = {k.replace('encoder.', ''): v for k, v in net_ckpt['model'].items() if 'encoder.' in k}
+        net_state = {k.replace('online_encoder.', ''): v for k, v in net_ckpt['model'].items() if 'online_encoder.' in k}
         partial_load(net_state, net)
 
     elif model_type == 'crw':

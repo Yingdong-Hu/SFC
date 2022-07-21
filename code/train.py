@@ -72,7 +72,6 @@ def main(args):
     print(f"Start training for {args.epochs} epochs")
     start_time = time.time()
     for epoch in range(args.epochs):
-        save_model(args, epoch, model, optimizer)
         train_one_epoch(model, data_loader,
                         optimizer, device, epoch, args,
                         wandb_logger=wandb_logger)
