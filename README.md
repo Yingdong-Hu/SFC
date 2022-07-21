@@ -250,10 +250,13 @@ Run step 2 and step 3, this should give:
 
 
 ## Acknowledgement
+We have modified and integrated the code from [CRW](https://github.com/ajabri/videowalk) and [PixPro](https://github.com/zdaxie/PixPro) into this project.
 
-<!-- ## Citation
 
-If you find our work useful in your research, please cite:
+
+## Citation
+
+If you find this repository useful, please consider giving a star :star: and citation:
 ```latex
 
-``` -->
+```
