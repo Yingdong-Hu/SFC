@@ -140,7 +140,7 @@ python test_vos.py --filelist ./eval/davis_vallist.txt \
 Run step 2 and step 3, this should give:
 ```
  J&F-Mean   J-Mean  J-Recall  J-Decay   F-Mean  F-Recall  F-Decay
- 0.679754 0.650271  0.767701 0.204178 0.709238  0.825091 0.267192
+ 0.679752 0.650268  0.767701 0.204185 0.709237  0.825303 0.267199
 ```
 </details>
 
@@ -159,7 +159,8 @@ python test_vos.py --filelist ./eval/davis_vallist.txt \
 
 Run step 2 and step 3, this should give:
 ```
-* Acc@1 83.372 Acc@5 96.482 loss 0.685
+ J&F-Mean   J-Mean  J-Recall  J-Decay   F-Mean  F-Recall  F-Decay
+ 0.677813 0.648103  0.759397 0.199973 0.707523  0.834314  0.24343
 ```
 </details>
 
