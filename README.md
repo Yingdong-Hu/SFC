@@ -67,7 +67,6 @@ Our fine-grained correspondence network and other baseline models can be downloa
 | [CRW](https://arxiv.org/abs/2006.14613) | ResNet-18 |[download](https://github.com/ajabri/videowalk/raw/master/pretrained.pth)    |
 | [MoCo-V1](https://arxiv.org/abs/1911.05722)| ResNet-50 |[download](https://dl.fbaipublicfiles.com/moco/moco_checkpoints/moco_v1_200ep/moco_v1_200ep_pretrain.pth.tar)|
 | [SimSiam](https://arxiv.org/abs/2011.10566) | ResNet-50 |[download](https://dl.fbaipublicfiles.com/simsiam/models/100ep-256bs/pretrain/checkpoint_0099.pth.tar)|
-| [VFS](https://arxiv.org/abs/2103.17263) | ResNet-50 | [download](https://github.com/xvjiarui/VFS/releases/download/v0.1-rc1/r50_nc_sgd_cos_100e_r5_1xNx2_k400-d7ce3ad0.pth)    |
 | [PixPro](https://arxiv.org/abs/2011.10043) | ResNet-50 |[download](https://drive.google.com/file/d/1Ox2RoFbTrrllbwvITdZvwkNnKUQSUPmV/view?usp=sharing)|
 | ImageNet classification | ResNet-50 | torchvision |
 
@@ -218,29 +217,10 @@ python test_vos.py --filelist ./eval/davis_vallist.txt \
 
 Run step 2 and step 3, this should give:
 ```
-* Acc@1 83.372 Acc@5 96.482 loss 0.685
+ J&F-Mean   J-Mean  J-Recall  J-Decay   F-Mean  F-Recall  F-Decay
+ 0.666938 0.643999  0.763806  0.21507 0.689877  0.794482 0.294832
 ```
 </details>
-
-<details>
-<summary>
-VFS
-</summary>
-
-For step 1, run:
-```
-python test_vos.py --filelist ./eval/davis_vallist.txt \
---semantic-model vfs \
---topk 10 --videoLen 20 --radius 12 --temperature 0.05 --cropSize -1 \
---save-path /save/path
-```
-
-Run step 2 and step 3, this should give:
-```
-* Acc@1 83.372 Acc@5 96.482 loss 0.685
-```
-</details>
-
 
 <details>
 <summary>
@@ -257,7 +237,8 @@ python test_vos.py --filelist ./eval/davis_vallist.txt \
 
 Run step 2 and step 3, this should give:
 ```
-* Acc@1 83.372 Acc@5 96.482 loss 0.685
+ J&F-Mean   J-Mean  J-Recall  J-Decay   F-Mean  F-Recall  F-Decay
+  0.58866 0.579455  0.699188 0.266769 0.597864  0.671969 0.363654
 ```
 </details>
 
