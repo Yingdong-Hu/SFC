@@ -24,9 +24,9 @@ Create an new conda environment.
 conda create -n sfc python=3.8 -y
 conda activate sfc
 ```
-Install [PyTorch](https://pytorch.org/)==1.8.0, [torchvision](https://pytorch.org/vision/stable/index.html)==0.9.0 following official instructions. For example:
+Install [PyTorch](https://pytorch.org/)==1.7.1, [torchvision](https://pytorch.org/vision/stable/index.html)==0.8.2 following official instructions. For example:
 ```
-conda install pytorch==1.8.0 torchvision==0.9.0 cudatoolkit=11.1 -c pytorch -c conda-forge
+conda install pytorch==1.7.1 torchvision==0.8.2 torchaudio==0.7.2 cudatoolkit=11.0 -c pytorch
 ```
 Clone this repo and install required packages:
 ```
