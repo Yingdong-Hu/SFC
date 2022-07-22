@@ -78,13 +78,6 @@ def make_encoder(model_type, remove_layers=['layer4']):
                      'module.encoder' in k}
         partial_load(net_state, net)
 
-    elif model_type == 'vfs':
-        net = resnet.resnet50(pretrained=False)
-        pretrained_path = osp.join('../checkpoints', 'r50_nc_sgd_cos_100e_r5_1xNx2_k400-d7ce3ad0.pth')
-        net_ckpt = torch.load(pretrained_path)
-        net_state = net_ckpt['state_dict']
-        partial_load(net_state, net)
-
     elif model_type == 'pixpro':
         net = resnet.resnet50(pretrained=False)
         pretrained_path = osp.join('../checkpoints', 'pixpro_base_r50_400ep_md5_919c6612.pth')
