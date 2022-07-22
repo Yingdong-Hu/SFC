@@ -2,7 +2,7 @@
 
 This repository is the official PyTorch implementation for SFC introduced in the paper:
 
-Semantic-Aware Fine-Grained Correspondence. ECCV 2022 (**Oral**)
+[Semantic-Aware Fine-Grained Correspondence](https://arxiv.org/abs/2207.10456). ECCV 2022 (**Oral**)
 <br>
 Yingdong Hu, Renhao Wang, Kaifeng Zhang, and Yang Gao
 <br>
@@ -16,7 +16,7 @@ Yingdong Hu, Renhao Wang, Kaifeng Zhang, and Yang Gao
 
 ### Dependency Setup
 * Python 3.8
-* PyTorch 1.8.0
+* PyTorch 1.7.1
 * Other dependencies
 
 Create an new conda environment.
