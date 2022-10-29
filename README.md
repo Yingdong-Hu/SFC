@@ -252,5 +252,10 @@ We have modified and integrated the code from [CRW](https://github.com/ajabri/vi
 
 If you find this repository useful, please consider giving a star :star: and citation:
 ```latex
-
+@article{hu2022semantic,
+  title={Semantic-Aware Fine-Grained Correspondence},
+  author={Hu, Yingdong and Wang, Renhao and Zhang, Kaifeng and Gao, Yang},
+  journal={arXiv preprint arXiv:2207.10456},
+  year={2022}
+}
 ```
